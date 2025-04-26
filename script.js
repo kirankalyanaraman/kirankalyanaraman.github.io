@@ -1,12 +1,12 @@
+const tagline = "Building what matters.";
+let index = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const text = "Building What Matters | Startup PM | Tech Enthusiast";
-    let index = 0;
-    function typeEffect() {
-        document.getElementById('tagline').innerText = text.slice(0, index++);
-        if (index <= text.length) {
-            setTimeout(typeEffect, 100);
-        }
+function typeEffect() {
+    if (index < tagline.length) {
+        document.getElementById("tagline").innerHTML += tagline.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100);
     }
-    typeEffect();
-});
+}
+
+window.onload = typeEffect;
